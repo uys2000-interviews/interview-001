@@ -1,0 +1,25 @@
+* {
+  padding: 0px;
+  margin: 0px;
+}
+body {
+  overflow-x: hidden;
+}
+.image {
+  transform: translate3d(1, 1, 1);
+}
+.image-left {
+  position: absolute;
+  left: -100vh;
+  top: 0px;
+}
+.image-center {
+  position: relative;
+  right: 0px;
+  top: 0px;
+}
+.image-right {
+  position: absolute;
+  right: -100vh;
+  top: 0px;
+}
