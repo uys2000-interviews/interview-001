@@ -5,21 +5,25 @@
 body {
   overflow-x: hidden;
 }
-.image {
-  transform: translate3d(1, 1, 1);
-}
-.image-left {
-  position: absolute;
-  left: -100vh;
-  top: 0px;
-}
-.image-center {
-  position: relative;
-  right: 0px;
-  top: 0px;
-}
-.image-right {
-  position: absolute;
-  right: -100vh;
-  top: 0px;
+
+.scene {
+  width: 100vw;
+  height: 100vh;
+  perspective: 10000px;
+  -webkit-user-select: none;
+  -moz-user-select: -moz-none;
+  -ms-user-select: none;
+  user-select: none;
+  .pages {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    transform-style: preserve-3d;
+    .page {
+      width: 100vw;
+      height: 100vh;
+      position: absolute;
+      background-color: black;
+    }
+  }
 }
