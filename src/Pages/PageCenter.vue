@@ -1,4 +1,7 @@
 <template>
-    
+    center page
     asd
-</template>
+    a
+    setDefaultas
+    d
+</template> 

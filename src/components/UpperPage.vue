@@ -1,13 +1,19 @@
 <template>
   <div ref="touch" class="scene">
     <div class="pages" :style="moveImageLeft">
-      <div class="page" :style="imageLeft + rotateImageLeft">asd</div>
+      <div class="page" :style="imageLeft + rotateImageLeft">
+        <h1>Page Left</h1>
+      </div>
     </div>
     <div class="pages" :style="moveImage">
-      <div class="page" :style="imageCenter + rotateImage">asd</div>
+      <div class="page" :style="imageCenter + rotateImage">
+        <h1>Page Center</h1>
+      </div>
     </div>
     <div class="pages" :style="moveImageRight">
-      <div class="page" :style="imageRight + rotateImageRight">asd</div>
+      <div class="page" :style="imageRight + rotateImageRight">
+        <h1>Page Right</h1>
+      </div>
     </div>
   </div>
 </template>
@@ -16,6 +22,7 @@
 export default {
   components: {},
   inject: ["page"],
+  emits: ["setPage"],
   data() {
     return {
       onMove: false,
@@ -72,10 +79,13 @@ export default {
       x = x * direct;
       if (x > window.innerWidth / 5) {
         if (this.p == 0) this.page = this.pageChangeCheck();
+        this.$emit("setPage", this.page);
+
         this.setPageIndex();
         return true;
       } else {
         if (this.p == 1) this.page = this.pageChangeCheck();
+        this.$emit("setPage", this.page);
         this.setPageIndex();
         return false;
       }
